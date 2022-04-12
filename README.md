@@ -11,7 +11,7 @@ Our project uses artificial intelligence, smart lockers, and optimization algori
 ## Team:
 
 [Armando Dauer](LINK) (Back-end developer, Transportation specialist) \
-[Jovial Tchatchum](https://github.com/Jovial_MSc) (Back-end developer) \
+[Jovial Tchatchum](https://github.com/aj52izov) (Back-end developer) \
 [Matheus Correia](https://github.com/matheusgomesms) (Producer, Business Advisor, Transportation specialist) \
 [Neha Deshpande](https://github.com/Neha-2) (Designer, UX/UI) \
 [Paul Haggard](https://github.com/) (Business Advisor) \
