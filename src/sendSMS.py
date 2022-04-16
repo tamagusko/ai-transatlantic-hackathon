@@ -28,7 +28,7 @@ def sendSMS(delivery_id: str, phone: str):
     client = Client(account_sid, auth_token)
 
     # gen the message
-    text_to_send = f'Delivery {delivery_id} should be delivered within approximately 1 hour. \
+    text_to_send = f'Item {delivery_id} should be delivered within approximately 1 hour. \
         Are you at home to receive the order? Reply y or n to confirm delivery.'
 
     # send the message
