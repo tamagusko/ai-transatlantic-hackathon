@@ -22,16 +22,23 @@ load_dotenv()   # secrets are saved on .env file
 # .env: SENDGRID_API_KEY
 
 
-def sendEmail(client_email: str, delivery_id: str):
+def sendEmail(client_email: str, delivery_id: str, locker=None):
+    # created to use the locker
+    if locker is None:
+        content = 'will be delivered today until 7pm.'  # default content
+    else:
+        # if the order is in the locker
+        content = f'is available in locker {locker}.'
+
     message = Mail(
         from_email='tamagusko@gmail.com',
         to_emails=client_email,
         subject='Package delivery',
-        html_content=f'Order {delivery_id} will be delivered today until 7pm.',
+        html_content=f'Order {delivery_id} ' + content,
     )
     sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
     response = sg.send(message)
     return response.status_code, response.headers
 
 
-# test: sendEmail('tamagusko@gmail.com', '20220415_1')
+sendEmail('tamagusko@gmail.com', '20220415_1', '55')
