@@ -1,21 +1,25 @@
 # (c) Tiago Tamagusko 2022
 # Source: https://github.com/sendgrid/sendgrid-python
 """
-Sends an email using Twilio API.
+Sends an email using Sendgrid API.
 
 Usage:
-    $ sendSMS(delivery_id, client_phone)
+    $ sendEmail('client_email', 'delivery_id')
 
 Example:
-    # send a sms to the phone 1234567890
-    $ sendSMS(20220415_1, 1234567890)
+    # send a email to tamagusko@gmail.com to inform him that his order (20220415_1) was delivered
+    $ sendEmail('tamagusko@gmail.com', '20220415_1')
 """
 from __future__ import annotations
 
 import os
 
+from dotenv import load_dotenv
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+
+load_dotenv()   # secrets are saved on .env file
+# .env: SENDGRID_API_KEY
 
 
 def sendEmail(client_email: str, delivery_id: str):
@@ -25,10 +29,9 @@ def sendEmail(client_email: str, delivery_id: str):
         subject='Package delivery',
         html_content=f'Order {delivery_id} will be delivered today until 7pm.',
     )
-
     sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
     response = sg.send(message)
-    return print(response.status_code, response.body, response.headers)
+    return response.status_code, response.headers
 
 
-sendEmail('tamagusko@gmail.com', '20220415_1')
+# test: sendEmail('tamagusko@gmail.com', '20220415_1')
