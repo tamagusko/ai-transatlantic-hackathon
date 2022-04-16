@@ -7,6 +7,9 @@
 # Folders to ignore
 /bkp/*
 
+# Secret file
+.env
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
