@@ -20,15 +20,17 @@ This MVP has to prove that our idea can be applied in the future. Therefore, we 
 ## Activities:
 
 1. ~~Create a data structure for the MVP.~~ @tamagusko: data/README.md
-2. Frontend draft (? js).
-3. Code boxMeasurement.py.
-4. First pitch (20220419 - 17H). Use this MVP docs. @ArmandoDauer and @matheusgomesms
-5. Write optimization algorithm. @ArmandoDauer
-5. ~~Code sendSMS.py.~~ @tamagusko
-6. Code systemSMS.py @tamagusko
-7. Code sendMail.py @ tamagusko
-8. Code send
-9. Code makeCall.py.
-10. code coordinates.py. @tamagusko
-11. code closestLocker.py.
+2. Draw solution diagram. @tamgusko
+3. Fix concept diagram. @ArmandoDauer
+4. Frontend draft (? js).
+5. Code boxMeasurement.py.
+6. First pitch (20220419 - 17H). Use this MVP docs. @ArmandoDauer and @matheusgomesms
+7. Write optimization algorithm. @ArmandoDauer
+8. ~~Code sendSMS.py.~~ @tamagusko
+9. Code systemSMS.py @tamagusko
+10. Code sendMail.py @ tamagusko
+11. Code send
+12. Code makeCall.py.
+13. code coordinates.py. @tamagusko
+14. code closestLocker.py.
 
