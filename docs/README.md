@@ -28,7 +28,7 @@ This MVP has to prove that our idea can be applied in the future. Therefore, we 
 7. Write optimization algorithm. @ArmandoDauer
 8. ~~Code sendSMS.py.~~ @tamagusko
 9. Code systemSMS.py @tamagusko
-10. Code sendMail.py @ tamagusko
+10. ~~Code sendMail.py~~ @tamagusko
 11. Code makeCall.py.
 12. code coordinates.py. @tamagusko
 13. code closestLocker.py.
