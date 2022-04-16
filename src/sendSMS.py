@@ -36,7 +36,9 @@ def sendSMS(delivery_id: str, phone: str):
         .create(
             body=text_to_send,
             from_=os.getenv('TWILIO_PHONE'),
-            # SMS messages sent limited to phone numbers that have been verified with Twilio (trial version)
             to=phone,
         )
     return message.sid
+
+
+# test: sendSMS('20220415_1', '+351 914557970')
