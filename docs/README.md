@@ -2,6 +2,8 @@
 
 This MVP has to prove that our idea can be applied in the future. Therefore, we have to prove the adopted concepts. If possible with real tests on a reduced scale.
 
+![Structure](projectStructure.png)
+
 ## Definitions
 
 - Use API modules developed in Python (FastAPI) to facilitate integration.
