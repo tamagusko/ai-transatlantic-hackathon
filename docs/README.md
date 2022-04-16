@@ -22,7 +22,7 @@ This MVP has to prove that our idea can be applied in the future. Therefore, we 
 ## Activities:
 
 1. ~~Create a data structure for the MVP.~~ @tamagusko: data/README.md
-2. Draw solution diagram. @tamgusko
+2. ~~Draw solution diagram.~~ @tamgusko
 3. Fix concept diagram. @ArmandoDauer
 4. Frontend draft (? js).
 5. Code boxMeasurement.py.
