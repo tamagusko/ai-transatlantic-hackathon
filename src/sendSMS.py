@@ -7,7 +7,7 @@ Usage:
     $ sendSMS(delivery_id, client_phone)
 
 Example:
-    # send a sms to the phone number 1234567890
+    # send a sms to the phone 1234567890
     $ sendSMS(20220415_1, 1234567890)
 """
 from __future__ import annotations
@@ -28,7 +28,7 @@ def sendSMS(delivery_id: str, phone: str):
     client = Client(account_sid, auth_token)
 
     # gen the message
-    text_to_send = f'Delivery {delivery_id} should take approximately 1 hour.  \
+    text_to_send = f'Delivery {delivery_id} should be delivered within approximately 1 hour. \
         Are you at home to receive the order? Reply y or n to confirm delivery.'
 
     # send the message
