@@ -1,5 +1,25 @@
-# git clone https://github.com/tamagusko/cycling-sustainable-mobility.git
-# pip install -r requirements.txt
-
+certifi==2021.10.8
+cfgv==3.3.1
+charset-normalizer==2.0.12
+distlib==0.3.4
+filelock==3.6.0
+geographiclib==1.52
+geopy==2.2.0
+identify==2.4.12
+idna==3.3
+nodeenv==1.6.0
+platformdirs==2.5.1
 pre-commit==2.17.0
+PyJWT==2.3.0
+python-dotenv==0.20.0
+python-http-client==3.3.7
+pytz==2022.1
+PyYAML==6.0
+requests==2.27.1
+sendgrid==6.9.7
+six==1.16.0
+starkbank-ecdsa==2.0.3
+toml==0.10.2
 twilio==7.8.1
+urllib3==1.26.9
+virtualenv==20.14.1
