@@ -32,6 +32,6 @@ This MVP has to prove that our idea can be applied in the future. Therefore, we 
 9. Code monitor.py @tamagusko (working)
 10. ~~Code sendMail.py~~ @tamagusko
 11. Code makeCall.py.
-12. code coordinates.py. @tamagusko
-13. code closestLocker.py.
+12. ~~code coordinates.py.~~ @tamagusko
+13. code closestLocker.py. @tamagusko
 
