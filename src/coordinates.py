@@ -17,5 +17,8 @@ from geopy.geocoders import Nominatim
 
 def coordinates(address: str):
     locator = Nominatim(user_agent='myGeocoder')
-    location = locator.geocode(address)
-    return location.latitude, location.longitude
+    try:
+        location = locator.geocode(address)
+        return location.latitude, location.longitude
+    except AttributeError:
+        return None  # If the address is not found, return None
