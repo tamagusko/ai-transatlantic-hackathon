@@ -46,4 +46,4 @@ def sendSMS(delivery_id: str, phone: str, locker=None):
     return message.sid
 
 
-sendSMS('20220415_1', '+351 914557970', '55')
+# test: sendSMS('20220415_1', '+351 914557970', '55')

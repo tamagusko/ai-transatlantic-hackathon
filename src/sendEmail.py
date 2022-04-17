@@ -41,4 +41,4 @@ def sendEmail(client_email: str, delivery_id: str, locker=None):
     return response.status_code, response.headers
 
 
-sendEmail('tamagusko@gmail.com', '20220415_1', '55')
+# test: sendEmail('tamagusko@gmail.com', '20220415_1', '55')
