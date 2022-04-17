@@ -1,14 +1,14 @@
 # (c) Tiago Tamagusko 2022
 # Source: https://www.twilio.com/docs/sms/quickstart/python
 """
-Sends an sms using Twilio API.
+Make a call with the twilio API.
 
 Usage:
-    $ sendSMS(delivery_id, client_phone)
+    $ makeCall(delivery_id, client_phone)
 
 Example:
-    # send a sms to the phone 1234567890
-    $ sendSMS(20220415_1, 1234567890)
+    # Make a call to +351 123456789
+    $ makeCall(20220415_1, 1234567890)
 """
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ def makeCall(delivery_id: str, phone: str):
     account_sid = os.getenv('TWILIO_ACCOUNT_SID')
     auth_token = os.getenv('TWILIO_AUTH_TOKEN')
     client = Client(account_sid, auth_token)
-    # gen the message
+    # gen the text
     text_to_speak = f'Item {delivery_id} will be delivered in 15 minutes.'
     call = client.calls \
         .create(
@@ -37,4 +37,4 @@ def makeCall(delivery_id: str, phone: str):
     return call.sid
 
 
-# test: makeCall('20220415_1', '+351 914557970')
+# test: makeCall('20220415_1', '+351 123456789')
