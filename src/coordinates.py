@@ -1,27 +1,30 @@
 # (c) Tiago Tamagusko 2022
 """
-Transforms an address into coordinates (lat and long).
+API to Transforms an address into coordinates (lat and long).
 
 Usage:
-    $ coordinates('address')
+    $ HOST/coordinates?address='ADDRESS'
 
 Example:
     # Returns the coordinates of the Reichstag (address: Platz der Republik 1, 11011 Berlin, Germany)
-    $ coordinates('Platz der Republik 1, 11011 Berlin, Germany')
-    return: (52.5185918, 13.3766658)
+    $ https://mvptransatlanticai.herokuapp.com/coordinates?address='Platz der Republik 1, 11011 Berlin, Germany'
+    return:
+        0: 52.5185918
+        1: 13.3766658
 """
 from __future__ import annotations
 
+from fastapi import APIRouter
 from geopy.geocoders import Nominatim
 
+router = APIRouter()
 
-def coordinates(address: str):
+
+@router.get('/coordinates')
+async def coordinates(address: str):
     locator = Nominatim(user_agent='myGeocoder')
     try:
         location = locator.geocode(address)
         return location.latitude, location.longitude
     except AttributeError:
         return None  # If the address is not found, return None
-
-
-# test: print(coordinates('Rua General Humberto Delgado 207, 3030-327 Coimbra, Portugal'))
