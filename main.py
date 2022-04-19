@@ -4,6 +4,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 
 from src.coordinates import router as coordinates
+from src.makeCall import router as makeCall
 
 app = FastAPI(
     title='MVP',
@@ -18,7 +19,7 @@ def index():
 
 
 app.include_router(coordinates)
-# app.include_router(makeCall)
+app.include_router(makeCall)
 # app.include_router(sendEmail)
 # app.include_router(sendSMS)
 # app.include_router(monitor)

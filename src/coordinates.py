@@ -5,15 +5,15 @@ API to Transforms an address into coordinates (lat and long).
 Usage:
     HOST/coordinates?address='ADDRESS'
     Return:
-        0: latitude
-        1: longitude
+        latitude: LATITUDE
+        longitude: LONGITUDE
 
 Example:
     # Returns the coordinates of the Reichstag (address: Platz der Republik 1, 11011 Berlin, Germany)
     $ https://mvptransatlanticai.herokuapp.com/coordinates?address='Platz der Republik 1, 11011 Berlin, Germany'
     return:
-        0: 52.5185918
-        1: 13.3766658
+        latitude: 52.5185918
+        longitude: 13.3766658
 """
 from __future__ import annotations
 
@@ -28,6 +28,6 @@ async def coordinates(address: str):
     locator = Nominatim(user_agent='myGeocoder')
     try:
         location = locator.geocode(address)
-        return location.latitude, location.longitude
+        return {'latitude': '{}'.format(location.latitude), 'longitude': '{}'.format(location.longitude)}
     except AttributeError:
         return None  # If the address is not found, return None
