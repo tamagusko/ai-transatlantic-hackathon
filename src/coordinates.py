@@ -3,7 +3,10 @@
 API to Transforms an address into coordinates (lat and long).
 
 Usage:
-    $ HOST/coordinates?address='ADDRESS'
+    HOST/coordinates?address='ADDRESS'
+    Return:
+        0: latitude
+        1: longitude
 
 Example:
     # Returns the coordinates of the Reichstag (address: Platz der Republik 1, 11011 Berlin, Germany)
