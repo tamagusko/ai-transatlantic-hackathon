@@ -10,7 +10,7 @@ Usage:
 
 Example:
     # Returns the coordinates of the Reichstag (address: Platz der Republik 1, 11011 Berlin, Germany)
-    $ https://mvptransatlanticai.herokuapp.com/coordinates?address='Platz der Republik 1, 11011 Berlin, Germany'
+    https://mvptransatlanticai.herokuapp.com/coordinates?address='Platz der Republik 1, 11011 Berlin, Germany'
     return:
         latitude: 52.5185918
         longitude: 13.3766658
