@@ -1,5 +1,6 @@
 # (c) Tiago Tamagusko 2022
 # Source: https://www.twilio.com/docs/sms/quickstart/python
+# adapt with: https://www.twilio.com/blog/send-sms-fastapi-twilio
 """
 Sends an sms using Twilio API.
 
