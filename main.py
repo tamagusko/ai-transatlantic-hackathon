@@ -7,7 +7,8 @@ from src.coordinates import router as coordinates
 
 app = FastAPI(
     title='MVP',
-    description='Team 01: API to run the MVP backend of the Transatlantic AI Hackathon – Sustainable Supply Chain Deep Hack',
+    description='Team 01: API to run the MVP backend of the Transatlantic AI Hackathon \
+        – Sustainable Supply Chain Deep Hack',
     version='0.1',
 )
 
