@@ -25,7 +25,7 @@ router = APIRouter()
 
 @router.get('/coordinates')
 async def coordinates(address: str):
-    locator = Nominatim(user_agent='myGeocoder', timeout=10)
+    locator = Nominatim(user_agent='mvptransatlanticai', timeout=10)
     try:
         location = locator.geocode(address)
         return {'latitude': '{}'.format(location.latitude), 'longitude': '{}'.format(location.longitude)}
