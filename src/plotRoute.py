@@ -17,18 +17,10 @@ Example:
 """
 from __future__ import annotations
 
-import pandas as pd
-import geopandas as gpd
-from shapely.geometry import Point, LineString
-
-import matplotlib.pyplot as plt
-import plotly_express as px
-
 import networkx as nx
 import osmnx as ox
-
-from coordinates import coordinates
-from createGraph import create_graph
+# from coordinates import coordinates  # uncomment if use address
+# from createGraph import create_graph  # uncomment to use
 ox.config(use_cache=True, log_console=True)
 
 
