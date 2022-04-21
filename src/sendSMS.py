@@ -5,11 +5,11 @@
 Sends an sms using Twilio API.
 
 Usage:
-    $ sendSMS(delivery_id, client_phone)
+    sendSMS(delivery_id, client_phone)
 
 Example:
     # send a sms to the phone 1234567890
-    $ sendSMS(20220415_1, 1234567890)
+    sendSMS(20220415_1, 1234567890)
 """
 from __future__ import annotations
 
