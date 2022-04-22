@@ -7,7 +7,7 @@ With these coordinates, we generate a graph with the shortest distance (based on
 
 client1, client3, client4, client2, client5
 
-To feed this algorithm, I can write a matrix with the travel time between each client. With this matrix, i.e.:
+To feed this algorithm, We can write a matrix with the travel time between each client. With this matrix, i.e.:
 
 ```python
 # example, random travel distance matrix for 5 clients
@@ -22,7 +22,7 @@ travel_times = np.array([[15, 10, 11, 10, 12],
 # 1000: route does not exist
 ```
 
-Also, I can easily write a list with clients coordinates, i.e.:
+Also, we can easily write a list with clients coordinates, i.e.:
 
 ```python
 # example, from the coordinates of the clients
