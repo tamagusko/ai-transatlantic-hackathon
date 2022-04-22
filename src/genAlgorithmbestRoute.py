@@ -1,5 +1,6 @@
 # (c) Armando Dauer 2022
 # Refactored by Tiago Tamagusko 2022
+""" Genetic Algorithm developed for the solve our problem. """
 from __future__ import annotations
 
 import random
@@ -10,7 +11,6 @@ def Cost_Routing_Solution(Solution, travel_times):
     while (i < (len(Solution) - 1)):
         Cost = Cost + travel_times[Solution[i]][Solution[i + 1]]
         i += 1
-
     return Cost
 
 
@@ -20,7 +20,6 @@ def Random_Solution(Number_of_Stops):
     while (i < Number_of_Stops):
         order.append(i)
         i += 1
-
     Solution = []
     i = 0
     while (i < Number_of_Stops):
@@ -28,46 +27,39 @@ def Random_Solution(Number_of_Stops):
         order.remove(Choice)
         Solution.append(Choice)
         i += 1
-
     return Solution
 
 
 def First_batch_of_solutions(Number_of_Stops):
     Batch = []
-
     i = 0
     while (i < (Number_of_Stops * 10)):
         Batch.append(Random_Solution(Number_of_Stops))
         i += 1
-
     return Batch
 
 
 def Finding_lowest_Solution(Thread):
     Lowest_Value = 10000000
     Position = 0
-
     i = 0
     while (i < len(Thread)):
         if(Thread[i] < Lowest_Value):
             Lowest_Value = Thread[i]
             Position = i
         i += 1
-
     return Position
 
 
 def Filtering_best_solutions(Solutions, travel_times, Number_of_Stops):
     Costs = []
     Sol = Solutions
-
     i = 0
     while (i < len(Sol)):
         Costs.append(Cost_Routing_Solution(Sol[i], travel_times))
         i += 1
 
     Best_Solutions = []
-
     i = 0
     while (i < Number_of_Stops):
         Pos = 0
@@ -82,11 +74,8 @@ def Filtering_best_solutions(Solutions, travel_times, Number_of_Stops):
 
 
 def Fix_Solution(part_1, part_2, Number_of_Stops):
-
     Final_Sol = part_1 + part_2
-
     Elements_missing = []
-
     i = 0
     while (i < Number_of_Stops):
         Existing = False
@@ -98,9 +87,7 @@ def Fix_Solution(part_1, part_2, Number_of_Stops):
         if Existing is False:
             Elements_missing.append(i)
         i += 1
-
     Repeated_Elements = []
-
     i = 0
     while (i < len(Final_Sol)):
         j = i
@@ -112,20 +99,16 @@ def Fix_Solution(part_1, part_2, Number_of_Stops):
                     Repeated_Elements.append([Final_Sol[i], j])
                 j += 1
         i += 1
-
     if(len(Elements_missing) > 0):
         i = 0
         while (i < len(Elements_missing)):
             Final_Sol[Repeated_Elements[i][1]] = Elements_missing[i]
             i += 1
-
     return Final_Sol
 
 
 def Cross_Over(Solutions, Number_of_Stops):
-
     New_Solutions = []
-
     i = 0
     while (i < len(Solutions)):
         Father = Solutions[i]
@@ -152,7 +135,6 @@ def Cross_Over(Solutions, Number_of_Stops):
 
                 j += 1
         i += 1
-
     return New_Solutions
 
 
@@ -166,7 +148,6 @@ def Mutation(Solution):
     store = Solution[pos_1]
     Solution[pos_1] = Solution[pos_2]
     Solution[pos_2] = store
-
     return Solution
 
 
@@ -209,10 +190,10 @@ def Routing(travel_times):
 
         else:
             Count = Count + 1
-
     return (Best_Solution[0])
 
 
+# add 1 to solution because python starts at 0
 def sum_one_solution(solution: list):
     return [x + 1 for x in solution]
 
