@@ -25,7 +25,14 @@ ox.config(use_cache=True, log_console=True)
 
 
 def shortest_route(G, start_node, end_node):
-    # https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html
+    """ find the shortest route based on two nodes (start and end).
+    Args:
+        G: Graph (networkx)
+        start_node: origin node - format: (LAT, LONG)
+        end_node: destination node - format: (LAT, LONG)
+
+    More on: https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html
+    """
     start = ox.get_nearest_node(G, start_node)
     end = ox.get_nearest_node(G, end_node)
     weight = 'travel_time'
@@ -38,7 +45,6 @@ def plot_graph_route(G, route, weight):
         G: Graph (networkx)
         route: list of routes to plot (format of route: shortest_route(G, start_node, end_node))
     """
-
     return ox.plot_graph_routes(G, route, route_linewidth=6, node_size=0, bgcolor='k')
 
 
