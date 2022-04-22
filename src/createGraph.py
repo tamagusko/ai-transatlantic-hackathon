@@ -5,7 +5,7 @@ Creates a networkx graph using OSMnx.
 Usage:
     create_graph(location, dist, transport_mode)
 Example:
-    # Creates a graph from the coordinates of two addresses in Coimbra
+    # Creates a graph from the coordinates of two addresses in Coimbra, Portugal.
     G = create_graph("Coimbra", 3000, "drive")
 """
 from __future__ import annotations
