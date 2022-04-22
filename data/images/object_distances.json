@@ -7,7 +7,7 @@
 		"height": 14,
 		"depth": 14,
 	"distance": 37}},
-		
+
 	"image2": {"view1": {
 		"width": 26,
 		"height": 9,
@@ -16,7 +16,7 @@
 		"height": 9,
 		"depth": 9,
 	"distance": 24}},
-		
+
 	"image4": {"view1": {
 		"width": 19,
 		"height": 17.5,
@@ -25,7 +25,7 @@
 		"height": 17.5,
 		"depth": 6,
 	"distance": 31}},
-		
+
 	"image6": {"view1": {
 		"width": 15,
 		"height": 13.5,
@@ -34,7 +34,7 @@
 		"height": 13.5,
 		"depth": 11.5,
 	"distance": 35}},
-		
+
 	"image7": {"view1": {
 		"width": 32.5,
 		"height": 7,
@@ -43,7 +43,7 @@
 		"height": 7,
 		"depth": 7,
 	"distance": 17.5}},
-		
+
 	"image8": {"view1": {
 		"width": 22,
 		"height": 11,

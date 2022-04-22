@@ -1,18 +1,23 @@
-import numpy as np
+from __future__ import annotations
+
 import json
-from imutils import perspective
-from imutils import contours
-import imutils
+
 import cv2
+import imutils
+import numpy as np
+from imutils import contours
+from imutils import perspective
 
 
 def _midpoint(ptA, ptB):
     return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
 
 
-def _get_bbox_width_height(image_mat, training_phase, pixelsPerCmMetric: float = 0,
-                          distance_camera_object: float = 0,
-                          use_focal: bool = False, focal_length: int = 0):
+def _get_bbox_width_height(
+    image_mat, training_phase, pixelsPerCmMetric: float = 0,
+    distance_camera_object: float = 0,
+    use_focal: bool = False, focal_length: int = 0,
+):
     """
         compute the bounding box width and height that contains the object present in image.
         Assumption: the image only have one object
@@ -35,8 +40,10 @@ def _get_bbox_width_height(image_mat, training_phase, pixelsPerCmMetric: float =
     gray = cv2.GaussianBlur(gray, (7, 7), 0)
 
     # find contours in the edge map
-    cnts = cv2.findContours(gray.copy(), cv2.RETR_EXTERNAL,
-                            cv2.CHAIN_APPROX_SIMPLE)
+    cnts = cv2.findContours(
+        gray.copy(), cv2.RETR_EXTERNAL,
+        cv2.CHAIN_APPROX_SIMPLE,
+    )
     cnts = imutils.grab_contours(cnts)
     # sort the contours from left-to-right and initialize the
     # 'pixels per metric' calibration variable
@@ -52,13 +59,13 @@ def _get_bbox_width_height(image_mat, training_phase, pixelsPerCmMetric: float =
         orig = image_mat.copy()
         box = cv2.minAreaRect(c)
         box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
-        box = np.array(box, dtype="int")
+        box = np.array(box, dtype='int')
         # order the points in the contour such that they appear
         # in top-left, top-right, bottom-right, and bottom-left
         # order, then draw the outline of the rotated bounding
         # box
         box = perspective.order_points(box)
-        cv2.drawContours(orig, [box.astype("int")], -1, (0, 255, 0), 2)
+        cv2.drawContours(orig, [box.astype('int')], -1, (0, 255, 0), 2)
 
         # unpack the ordered bounding box, then compute the midpoint
         # between the top-left and top-right coordinates, followed by
@@ -73,8 +80,10 @@ def _get_bbox_width_height(image_mat, training_phase, pixelsPerCmMetric: float =
 
         (trbrX, trbrY) = _midpoint(tr, br)
 
-        width = width1 if width1 >= width2 else width2  # np.linalg.norm(top_center - button_center)
-        height = height1 if height1 >= height2 else height2  # np.linalg.norm(left_center - right_center)
+        # np.linalg.norm(top_center - button_center)
+        width = width1 if width1 >= width2 else width2
+        # np.linalg.norm(left_center - right_center)
+        height = height1 if height1 >= height2 else height2
 
         if training_phase:
             return width, height
@@ -111,8 +120,7 @@ def _compute_focal_length(measured_distance, real_width, image_width):
     return np.mean(focal)
 
 
-def focal_length_and_pixelsPerCM(filename='../data/images/object_distances.json', image_path="../data/images"
-                                 , storage_path="../data/estimations") -> float:
+def focal_length_and_pixelsPerCM(filename='../data/images/object_distances.json', image_path='../data/images', storage_path='../data/estimations') -> float:
     """
     compute an estimation of the focal_length and the number of pixels per centimeter of the camera based of measured values
 
@@ -130,37 +138,53 @@ def focal_length_and_pixelsPerCM(filename='../data/images/object_distances.json'
     # Iterating through the json
     # list
     for image in data:
-        view1 = data[image]["view1"]
-        real_width = view1["width"]
-        real_height1 = view1["height"]
-        distance1 = view1["distance"]
+        view1 = data[image]['view1']
+        real_width = view1['width']
+        real_height1 = view1['height']
+        distance1 = view1['distance']
         real_measures.append(real_width)
         real_measures.append(real_height1)
         distances_camera_objects.append(distance1)
         distances_camera_objects.append(distance1)
-        img_view1 = cv2.imread(image_path + '/' + image + "_view1.jpg", cv2.IMREAD_COLOR)
-        img_width, img_height1 = _get_bbox_width_height(img_view1, training_phase=True)
+        img_view1 = cv2.imread(
+            image_path + '/' + image +
+            '_view1.jpg', cv2.IMREAD_COLOR,
+        )
+        img_width, img_height1 = _get_bbox_width_height(
+            img_view1, training_phase=True,
+        )
         image_measures.append(img_width)
         image_measures.append(img_height1)
-        view2 = data[image]["view2"]
-        real_height2 = view2["height"]
-        real_depth = view2["depth"]
-        distance2 = view1["distance"]
+        view2 = data[image]['view2']
+        real_height2 = view2['height']
+        real_depth = view2['depth']
+        distance2 = view1['distance']
         real_measures.append(real_height2)
         real_measures.append(real_depth)
         distances_camera_objects.append(distance2)
         distances_camera_objects.append(distance2)
-        img_view2 = cv2.imread(image_path + '/' + image + "_view2.jpg", cv2.IMREAD_COLOR)
-        img_height2, img_depth = _get_bbox_width_height(img_view2, training_phase=True)
+        img_view2 = cv2.imread(
+            image_path + '/' + image +
+            '_view2.jpg', cv2.IMREAD_COLOR,
+        )
+        img_height2, img_depth = _get_bbox_width_height(
+            img_view2, training_phase=True,
+        )
         image_measures.append(img_height2)
         image_measures.append(img_depth)
     # Closing file
     f.close()
-    focal_length = _compute_focal_length(np.array(distances_camera_objects), np.array(real_measures),
-                                         np.array(image_measures))
-    pixelsPerMetric = np.mean(np.array(image_measures) / np.array(real_measures))
+    focal_length = _compute_focal_length(
+        np.array(distances_camera_objects), np.array(real_measures),
+        np.array(image_measures),
+    )
+    pixelsPerMetric = np.mean(
+        np.array(image_measures) / np.array(real_measures),
+    )
     for i in range(len(distances_camera_objects)):
-        test_result = (distances_camera_objects[i] * image_measures[i]) / focal_length
+        test_result = (
+            distances_camera_objects[i] * image_measures[i]
+        ) / focal_length
         # print(test_result, real_measures[i])
 
     np.save(storage_path + '/focal_length_estimate', focal_length)
@@ -168,9 +192,11 @@ def focal_length_and_pixelsPerCM(filename='../data/images/object_distances.json'
     return focal_length, pixelsPerMetric
 
 
-def compute_dimension_of_object(img_mat_view1:np.array, img_mat_view2:np.array, pixelsPerCmMetric: float = 0,
-                                distance_camera_object: float = 0,
-                                use_focal: bool = False, focal_length: int = 0):
+def compute_dimension_of_object(
+    img_mat_view1: np.array, img_mat_view2: np.array, pixelsPerCmMetric: float = 0,
+    distance_camera_object: float = 0,
+    use_focal: bool = False, focal_length: int = 0,
+):
     """
         compute an estimation of the dimension (width ,height,depth) of the object present in image.
         Assumption: the image only have one object
@@ -183,13 +209,17 @@ def compute_dimension_of_object(img_mat_view1:np.array, img_mat_view2:np.array, 
         :param focal_length: the camera (estimated) focal_length parameter
         :return: the bounding box width and height (width, height) in CM if training_phase is false in pixels else
         """
-    width1, height1 = _get_bbox_width_height(img_mat_view1, training_phase=False, pixelsPerCmMetric=pixelsPerCmMetric,
-                          distance_camera_object=distance_camera_object,
-                          use_focal=use_focal, focal_length=focal_length)
+    width1, height1 = _get_bbox_width_height(
+        img_mat_view1, training_phase=False, pixelsPerCmMetric=pixelsPerCmMetric,
+        distance_camera_object=distance_camera_object,
+        use_focal=use_focal, focal_length=focal_length,
+    )
 
-    width2, height2 = _get_bbox_width_height(img_mat_view2, training_phase=False, pixelsPerCmMetric=pixelsPerCmMetric,
-                                          distance_camera_object=distance_camera_object,
-                                          use_focal=use_focal, focal_length=focal_length)
+    width2, height2 = _get_bbox_width_height(
+        img_mat_view2, training_phase=False, pixelsPerCmMetric=pixelsPerCmMetric,
+        distance_camera_object=distance_camera_object,
+        use_focal=use_focal, focal_length=focal_length,
+    )
 
     result = [width1, width2, height1, height2]
     result.sort()
@@ -200,12 +230,15 @@ def compute_dimension_of_object(img_mat_view1:np.array, img_mat_view2:np.array, 
 focal_length, pixelsPerCM = focal_length_and_pixelsPerCM()
 
 
-#testing
-img_mat_view1 = cv2.imread("../data/images/image1_view1.jpg")
-img_mat_view2 = cv2.imread("../data/images/image1_view2.jpg")
+# testing
+img_mat_view1 = cv2.imread('../data/images/image1_view1.jpg')
+img_mat_view2 = cv2.imread('../data/images/image1_view2.jpg')
 
-pixelsPerCmMetric = np.load("../data/estimations/pixelsPerCMMetric_estimate.npy")
+pixelsPerCmMetric = np.load(
+    '../data/estimations/pixelsPerCMMetric_estimate.npy',
+)
 
-result = compute_dimension_of_object(img_mat_view1, img_mat_view2, pixelsPerCmMetric)
+result = compute_dimension_of_object(
+    img_mat_view1, img_mat_view2, pixelsPerCmMetric,
+)
 print(result)
-
