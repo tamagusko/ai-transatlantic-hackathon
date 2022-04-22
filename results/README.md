@@ -35,8 +35,8 @@ We can use brute force, genetic algorithms, or others to solve the problem.
 
 The expected output format is on list, i.e.:
 
-option 1: [ID_client1, ID_client3, ID_client4, ID_client2, ID_client5]
-option 2: [[lat1, long1], [lat3, long3], [lat4, long4], [lat2, long2], [lat5, long5]]
+option 1: [ID_client1, ID_client3, ID_client4, ID_client2, ID_client5]  
+option 2: [[lat1, long1], [lat3, long3], [lat4, long4], [lat2, long2], [lat5, long5]]  
 option 3: [address1, address3, address4, address2, address15]
 
 Other formats can be adopted.
