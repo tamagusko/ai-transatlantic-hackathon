@@ -25,3 +25,6 @@ def coordinates(address: str):
         return location.latitude, location.longitude
     except AttributeError:
         return None  # If the address is not found, return None
+
+
+print(coordinates('Rua Camilo Pessanha,Coimbra, Portugal'))
