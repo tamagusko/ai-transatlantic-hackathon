@@ -1,6 +1,6 @@
 # Sustainable Supply Chain DeepHack
 
-## AI TRANSATLANTIC HACKATHON - ULTRAHACK
+## Transatlantic AI Hackathon - ULTRAHACK
 
 [Ideas](https://docs.google.com/document/d/1BjOzDVyPdYw4VCrMpDJSqaygSjmlmXd4kGMiTXUDkdo/edit) [Code](LINK) [Pitch](LINK)
 

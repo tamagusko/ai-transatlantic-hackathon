@@ -15,10 +15,11 @@ This MVP has to prove that our idea can be applied in the future. Therefore, we 
 	6. closestLocker.py: with the coordinates, it returns the closest available locker (you have to evaluate the size of the order).
 	7. optimalRoute.py: Optimization algorithm with metaheuristic to calculate the best route for deliveries. This algorithm updates whenever it has a response from the client.
 	8. boxMeasurement.py: Using the Luxonis camera, take the measurements of the box. Using the luxonis camera, take the measurements of the box. This will be done at the warehouse.
-- Develop a frontend with a table of deliveries and status. Clicking on the delivery opens its details.
-	+ Javascript?
-- Develop a map to simulate locations / deliveries / lockers?
-	+ Lets do this?
+	9. Plot Graph Results: Develop createGraph.py and plotRoute.py to show the routes created based on the optimization algorithm.
+	9. Front-end:
+	- Develop a frontend with a table of deliveries and status. Clicking on the delivery opens its details.
+	- Develop a map to view locations, deliveries, and lockers.
+
 
 ## Activities:
 
@@ -27,7 +28,7 @@ This MVP has to prove that our idea can be applied in the future. Therefore, we 
 3. Fix concept diagram. @ArmandoDauer
 4. Frontend draft - Dashboard (js - React). @Neha
 5. Code boxMeasurement.py.
-6. First pitch (20220419 - 17H). Use this MVP docs. @ArmandoDauer and @matheusgomesms
+6. ~~First pitch (20220419 - 17H).~~ @ArmandoDauer
 7. Write optimization algorithm (optimalRoute.py). @ArmandoDauer
 8. ~~Code sendSMS.py.~~ @tamagusko
 9. Code monitor.py @tamagusko (working)
@@ -35,4 +36,8 @@ This MVP has to prove that our idea can be applied in the future. Therefore, we 
 11. ~~Code makeCall.py.~~ @tamagusko
 12. ~~code coordinates.py.~~ @tamagusko
 13. code closestLocker.py. @tamagusko
+14. ~~Plot graph results (createGraph.py + plotRoute.py).~~ @tamagusko
+15. Integrate all modules on the front-end
+16. First pitch
+17. Finalize the MVP to present (until 24/02 8h).
 
