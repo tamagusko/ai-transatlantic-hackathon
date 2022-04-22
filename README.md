@@ -2,7 +2,7 @@
 
 ## Transatlantic AI Hackathon - ULTRAHACK
 
-[Ideas](https://docs.google.com/document/d/1BjOzDVyPdYw4VCrMpDJSqaygSjmlmXd4kGMiTXUDkdo/edit) [Code](LINK) [Pitch](LINK)
+[Ideas](https://docs.google.com/document/d/1BjOzDVyPdYw4VCrMpDJSqaygSjmlmXd4kGMiTXUDkdo/edit) [Pitch](LINK)
 
 ## Project Name
 
@@ -10,7 +10,7 @@ Our project uses artificial intelligence, smart lockers, and optimization algori
 
 ## Team:
 
-[Armando Dauer](LINK) (Back-end developer, Transportation specialist) \
+[Armando Dauer](https://github.com/ArmandoDauer) (Back-end developer, Transportation specialist) \
 [Jovial Tchatchum](https://github.com/aj52izov) (Back-end developer) \
 [Matheus Correia](https://github.com/matheusgomesms) (Producer, Business Advisor, Transportation specialist) \
 [Neha Deshpande](https://github.com/Neha-2) (Designer, UX/UI) \
