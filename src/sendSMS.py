@@ -1,6 +1,5 @@
 # (c) Tiago Tamagusko 2022
 # Source: https://www.twilio.com/docs/sms/quickstart/python
-# adapt with: https://www.twilio.com/blog/send-sms-fastapi-twilio
 """
 Sends an sms using Twilio API.
 
@@ -10,6 +9,9 @@ Usage:
 Example:
     # send a sms to the phone 1234567890
     sendSMS(20220415_1, 1234567890)
+
+    # send a sms to the phone +351 1234567890 with the locker number
+    sendSMS('20220415_1', '+351 123456789', '55')
 """
 from __future__ import annotations
 
@@ -45,6 +47,3 @@ def sendSMS(delivery_id: str, phone: str, locker=None):
             to=phone,
         )
     return message.sid
-
-
-# test: sendSMS('20220415_1', '+351 123456789', '55')

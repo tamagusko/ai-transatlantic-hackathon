@@ -56,7 +56,7 @@ def plot_graph_route(G, route, weight):
     """ Plots the graph and the shortest route.
     Args:
         G: Graph (networkx)
-        route: list of routes to plot
+        route: list of routes to plot. Use create_route(G, best_route) to generate the route.
     """
     return ox.plot_graph_routes(G, route, route_linewidth=6, node_size=0, bgcolor='k')
 

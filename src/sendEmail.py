@@ -4,11 +4,14 @@
 Sends an email using Sendgrid API.
 
 Usage:
-    $ sendEmail('client_email', 'delivery_id')
+    sendEmail('client_email', 'delivery_id', 'locker[default=None]')
 
 Example:
-    # send a email to tamagusko@gmail.com to inform him that his order (20220415_1) was delivered
-    $ sendEmail('tamagusko@gmail.com', '20220415_1')
+    # send a email to email@gmail.com to inform him that his order (20220415_1) was delivered
+    sendEmail('email@gmail.com', '20220415_1')
+
+    # send a email to email@gmail.com to inform him that his order (20220415_1) was delivered in locker 55
+    sendEmail('tamagusko@gmail.com', '20220415_1', '55')
 """
 from __future__ import annotations
 
@@ -39,6 +42,3 @@ def sendEmail(client_email: str, delivery_id: str, locker=None):
     sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
     response = sg.send(message)
     return response.status_code, response.headers
-
-
-# test: sendEmail('tamagusko@gmail.com', '20220415_1', '55')
