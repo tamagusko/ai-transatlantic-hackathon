@@ -2,7 +2,7 @@
 
 ## Transatlantic AI Hackathon - ULTRAHACK
 
-[Ideas](https://docs.google.com/document/d/1BjOzDVyPdYw4VCrMpDJSqaygSjmlmXd4kGMiTXUDkdo/edit) [Pitch](LINK)
+[Ideas](https://docs.google.com/document/d/1BjOzDVyPdYw4VCrMpDJSqaygSjmlmXd4kGMiTXUDkdo/edit) [Pitch](https://www.canva.com/design/DAE7J_kW5K0/cvCfKXv1FJnDe2ysbXzTGA/edit?utm_content=DAE7J_kW5K0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Project Name
 
@@ -36,8 +36,14 @@ Finally, the Luxonis OAK-D-Lite Spatial AI camera will be used to identify the d
 
 ## MVP
 
-What have we done?
+Como foi gerado o MVP
+
+![Concept](img/routeMVP.png)
+
 
 ---
 
 Codes and data are protected. Please see [LICENSE](LICENSE) for details.
+
+
+
