@@ -38,8 +38,10 @@ def get_distance_matrix(df):
     distance_matrix = np.matrix(np.zeros((len(latitudes), len(longitudes))))
     for i in range(len(df)):
         for j in range(len(df)):
-            distance_matrix[i, j] = shortest_route_length(
-                G, latitudes[i], longitudes[i], latitudes[j], longitudes[j],
+            distance_matrix[i, j] = int(
+                shortest_route_length(
+                    G, latitudes[i], longitudes[i], latitudes[j], longitudes[j],
+                ),
             )
     # set all the zeros to a big number
     distance_matrix[distance_matrix == 0] = 10000
