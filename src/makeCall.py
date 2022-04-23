@@ -8,7 +8,7 @@ Usage:
 
 Example:
     # Call +351 123456789 to report delivery 20220415_1
-    $ makeCall('20220415_1', '+351123456789')
+    makeCall('20220415_1', '+351123456789')
 """
 from __future__ import annotations
 

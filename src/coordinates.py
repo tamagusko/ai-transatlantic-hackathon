@@ -1,11 +1,19 @@
 # (c) Tiago Tamagusko 2022
 """
-API to Transforms an address into coordinates (lat and long).
+Transforms an address into coordinates.
 
 Usage:
     coordinates(address)
     Return:
         (LATITUDE, LONGITUDE)
+
+    latitude(address)
+    Return:
+        LATITUDE
+
+    longitude(address)
+    Return:
+        LONGITUDE
 
 Example:
     # Returns the coordinates of the Reichstag (address: Platz der Republik 1, 11011 Berlin, Germany)
@@ -43,6 +51,3 @@ def longitude(address: str):
         return location.longitude
     except AttributeError:
         return None  # If the address is not found, return None
-
-
-# print(coordinates('Rua Quinta da Portela, Coimbra, Portugal'))

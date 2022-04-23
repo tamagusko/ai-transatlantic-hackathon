@@ -3,13 +3,11 @@
 Find the shortest route based on two nodes (start and end).
 
 Usage:
-    shortest_route(G, start_node, end_node)
+    shortest_route(G, start_lat, start_long, end_lat, end_long)
 
 Example:
-    # find the best route between two client1 and client2
-    client1 = coordinates('Rua Larga 1, Coimbra, Portugal')
-    client2 = coordinates('Rua do Brasil, 232, Coimbra, Portugal')
-    route1 = shortest_route(G, client1, client2)
+    # find the best route between two client1 (40.2019077, -8.4132559) and client2 (40.2079321, 8.4241537)
+    route1 = shortest_route(G, 40.2019077, -8.4132559, 40.2079321, 8.4241537)
 """
 from __future__ import annotations
 

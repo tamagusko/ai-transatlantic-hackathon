@@ -1,6 +1,6 @@
 # (c) Tiago Tamagusko 2022
 """
-Add coordinates to the dataset.
+Add coordinates to the dataset and save it.
 """
 from __future__ import annotations
 

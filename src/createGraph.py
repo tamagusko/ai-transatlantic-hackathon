@@ -5,7 +5,7 @@ Creates a networkx graph using OSMnx.
 Usage:
     create_graph(location, dist, transport_mode)
 Example:
-    # Creates a graph from the coordinates of two addresses in Coimbra, Portugal.
+    # Creates a graph for the road network with a radius of 3 km from the city center of Coimbra, Portugal.
     G = create_graph("Coimbra", 3000, "drive")
 """
 from __future__ import annotations
@@ -18,7 +18,7 @@ def create_graph(location, dist, transport_mode):
     """ Creates a networkx graph using OSMnx.
     Args:
         location: the location of the central node to build the graph
-        dist: distance from the central node to the other nodes to be represented (meters).
+        dist: radius distance from the central node to the other nodes to be represented (meters).
         transport_mode: the mode of transport ("all_private", "all", "bike", "drive", "drive_service", "walk")
     Returns:
         the networkx graph
