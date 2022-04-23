@@ -37,6 +37,3 @@ def get_distance_matrix(df):
 
 df = pd.read_csv('./data/processed/clientCoordinates.csv', sep=';')
 print(get_distance_matrix(df))
-
-
-# print(shortest_route(G, 40.2019077, -8.4132559, 40.2079321, 8.4241537))
