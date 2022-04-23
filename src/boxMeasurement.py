@@ -127,12 +127,13 @@ def boxMeasurement():
         width, height = dimensions.compute_width_height()
         dimension_list.append(width)
         dimension_list.append(height)
+
         if view1 == 1:
             view1 = 2
         elif   view1 == 2:
             break
     dimension_list.sort()
-    return dimension_list
+    return dimension_list[:3]
 
 dim = boxMeasurement()
 
