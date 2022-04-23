@@ -24,9 +24,9 @@ def saveData(df, folder='./data/processed/', filename='clientCoordinates.csv', i
 
 def add_client_coordinates_to_dataset(df):
     """
-    Returns the coordinates (latitude and longitude) of a client list.
+    Add the coordinates (latitude and longitude) into a dataset based on address.
     Args:
-        dataset: The dataset must have two columns, one for the clients and another for the address.
+        df: The dataset must have two columns, one for the clients and another for the address.
     """
     df['latitude'] = df['address'].apply(latitude).astype(str)
     df['longitude'] = df['address'].apply(longitude).astype(str)
