@@ -193,14 +193,9 @@ def Routing(travel_times):
     return (Best_Solution[0])
 
 
-# add 1 to solution because python starts at 0
-def sum_one_solution(solution: list):
-    return [x + 1 for x in solution]
-
 #######################################################################################################
 #######################################################################################################
 #######################################################################################################
-
 
 # generate in createInstance.py
 distances = [
@@ -218,6 +213,8 @@ distances = [
 
 
 Path = Routing(distances)
-# result = [9, 5, 6, 8, 2, 3, 4, 7, 1, 10]
-result = str(sum_one_solution(Path))
-print(str(Cost_Routing_Solution(Path, distances)) + ' ' + result)
+
+# RUN
+
+# print(str(Cost_Routing_Solution(Path, distances)) + ' ' + str(Path))
+# result = 1293 [9, 0, 2, 3, 6, 1, 7, 5, 4, 8]
