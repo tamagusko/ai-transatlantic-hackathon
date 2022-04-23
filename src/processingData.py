@@ -7,6 +7,7 @@ from __future__ import annotations
 import pandas as pd
 from coordinates import latitude
 from coordinates import longitude
+# from coordinates import coordinates
 
 
 df = pd.read_csv(
@@ -28,6 +29,8 @@ def add_client_coordinates_to_dataset(df):
     Args:
         df: The dataset must have two columns, one for the clients and another for the address.
     """
+    # uncomment if you want the coordinates in the (lat, long) dataset
+    # df['coordinates'] = df['address'].apply(coordinates).astype(str)
     df['latitude'] = df['address'].apply(latitude).astype(str)
     df['longitude'] = df['address'].apply(longitude).astype(str)
     return df
