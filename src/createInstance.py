@@ -47,5 +47,5 @@ def get_distance_matrix(df):
 
 
 # test
-df = pd.read_csv('./data/processed/clientCoordinates.csv', sep=';')
+df = pd.read_csv('./data/processed/lockersBerlinCoordinates.csv', sep=';')
 print(get_distance_matrix(df))
