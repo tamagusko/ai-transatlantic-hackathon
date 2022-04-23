@@ -133,7 +133,7 @@ def boxMeasurement():
         elif   view1 == 2:
             break
     dimension_list.sort()
-    return dimension_list
+    return dimension_list[:3]
 
 dim = boxMeasurement()
 
