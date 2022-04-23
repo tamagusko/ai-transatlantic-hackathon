@@ -14,9 +14,9 @@ from __future__ import annotations
 
 import numpy as np
 import osmnx as ox
-import pandas as pd
 from createGraph import create_graph
 from shortestRoute import shortest_route_length
+# import pandas as pd  # uncomment in test
 ox.config(use_cache=True, log_console=True)
 
 # create the graph with the OSMnx library (location = 'Coimbra', radius = 3000, transport_mode= 'drive')
@@ -43,10 +43,8 @@ def get_distance_matrix(df):
                     G, latitudes[i], longitudes[i], latitudes[j], longitudes[j],
                 ),
             )
-    # set all the zeros to a big number
-    distance_matrix[distance_matrix == 0] = 10000
     return distance_matrix
 
-
-df = pd.read_csv('./data/processed/clientCoordinates.csv', sep=';')
-print(get_distance_matrix(df))
+# test
+# df = pd.read_csv('./data/processed/clientCoordinates.csv', sep=';')
+# print(get_distance_matrix(df))
