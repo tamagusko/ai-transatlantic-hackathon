@@ -27,4 +27,22 @@ def coordinates(address: str):
         return None  # If the address is not found, return None
 
 
+def latitude(address: str):
+    locator = Nominatim(user_agent='myGeocode', timeout=10)
+    try:
+        location = locator.geocode(address)
+        return location.latitude
+    except AttributeError:
+        return None  # If the address is not found, return None
+
+
+def longitude(address: str):
+    locator = Nominatim(user_agent='myGeocode', timeout=10)
+    try:
+        location = locator.geocode(address)
+        return location.longitude
+    except AttributeError:
+        return None  # If the address is not found, return None
+
+
 # print(coordinates('Rua Quinta da Portela, Coimbra, Portugal'))
