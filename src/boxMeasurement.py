@@ -134,7 +134,7 @@ def boxMeasurement():
     dimension_list.sort()
     return dimension_list
 
-dim = test()
+dim = boxMeasurement()
 
 print(dim)
 
