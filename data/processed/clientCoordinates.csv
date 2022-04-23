@@ -1,11 +1,11 @@
-clients;latitude;longitude
-client1;40.2019077;-8.4132559
-client2;40.2079321;-8.4241537
-client3;40.2079554;-8.4380439
-client4;40.2161304;-8.4366713
-client5;40.2215964;-8.4095782
-client6;40.2150061;-8.413923
-client7;40.2108625;-8.4216025
-client8;40.21136145;-8.409485431339796
-client9;40.2677138;-7.9848674
-client10;40.1834635;-8.4051946
+clients;address;coordinates;latitude;longitude
+client1;Rua do Brasil, 232, Coimbra, Portugal;(40.2019077, -8.4132559);40.2019077;-8.4132559
+client2;Rua Larga 1, Coimbra, Portugal;(40.2079321, -8.4241537);40.2079321;-8.4241537
+client3;Avenida da Guarda Inglesa, Coimbra, Portugal;(40.2079554, -8.4380439);40.2079554;-8.4380439
+client4;Avenida Fernão de Magalhães, 627, Coimbra, Portugal;(40.2161304, -8.4366713);40.2161304;-8.4366713
+client5;Avenida Bissaya Barreto, 185, Coimbra, Portugal;(40.2215964, -8.4095782);40.2215964;-8.4095782
+client6;Alameda Armando Gonçalves 21, Coimbra;(40.2150061, -8.413923);40.2150061;-8.413923
+client7;Avenida Sá da Bandeira, 91, Coimbra, Portugal;(40.2108625, -8.4216025);40.2108625;-8.4216025
+client8;Avenida Dr. Dias da Silva, 122,Coimbra, Portugal;(40.21136145, -8.409485431339796);40.21136145;-8.409485431339796
+client9;Rua Dom Ernesto Sena de Oliveira 1, Coimbra, Portugal;(40.2677138, -7.9848674);40.2677138;-7.9848674
+client10;Rua Quinta da Portela, Coimbra, Portugal;(40.1834635, -8.4051946);40.1834635;-8.4051946

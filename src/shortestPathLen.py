@@ -18,7 +18,7 @@ import osmnx as ox
 ox.config(use_cache=True, log_console=True)
 
 
-def shortest_route(G, start_lat, start_long, end_lat, end_long):
+def shortest_path_len(G, start_lat, start_long, end_lat, end_long):
     """ Find the shortest route based on two nodes (start and end).
     Args:
         G: Graph (networkx)
@@ -30,4 +30,4 @@ def shortest_route(G, start_lat, start_long, end_lat, end_long):
     start = ox.distance.nearest_nodes(G, start_long, start_lat)
     end = ox.distance.nearest_nodes(G, end_long, end_lat)
     weight = 'travel_time'
-    return nx.shortest_path(G, start, end, weight)
+    return nx.shortest_path_length(G, start, end, weight)
