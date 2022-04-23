@@ -62,12 +62,12 @@ def plot_graph_route(G, route, weight):
 
 
 # test
-G = create_graph('Coimbra', 3000, 'drive')
+G = create_graph('Berlin', 10000, 'drive')
 # add speed to the graph
 G = ox.add_edge_speeds(G)
 # add travel time to the graph
 G = ox.add_edge_travel_times(G)
 
-# best route from genetic algorithm (genAlgorithmBestRoute): result = 1293 [9, 0, 2, 3, 6, 1, 7, 5, 4, 8]
-best_route = [9, 0, 2, 3, 6, 1, 7, 5, 4, 8]
+# best route from genetic algorithm (genAlgorithmBestRoute): result =  2490 [1, 8, 6, 4, 3, 0, 7, 2, 5, 9]
+best_route = [1, 8, 6, 4, 3, 0, 7, 2, 5, 9]
 plot_graph_route(G, create_route(G, best_route), 'travel_time')

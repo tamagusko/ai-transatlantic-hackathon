@@ -1,11 +1,11 @@
 clients;address;latitude;longitude
-client1;Rua do Brasil, 232, Coimbra, Portugal;40.2019077;-8.4132559
-client2;Rua Larga 1, Coimbra, Portugal;40.2079321;-8.4241537
-client3;Avenida da Guarda Inglesa, Coimbra, Portugal;40.2079554;-8.4380439
-client4;Avenida Fernão de Magalhães, 627, Coimbra, Portugal;40.2161304;-8.4366713
-client5;Avenida Bissaya Barreto, 185, Coimbra, Portugal;40.2215964;-8.4095782
-client6;Alameda Armando Gonçalves 21, Coimbra;40.2150061;-8.413923
-client7;Avenida Sá da Bandeira, 91, Coimbra, Portugal;40.2108625;-8.4216025
-client8;Avenida Dr. Dias da Silva, 122,Coimbra, Portugal;40.21136145;-8.409485431339796
-client9;Rua Dom Ernesto Sena de Oliveira 1, Coimbra, Portugal;40.2677138;-7.9848674
-client10;Rua Quinta da Portela, Coimbra, Portugal;40.1834635;-8.4051946
+client1;Siegmunds Hof 15, 10555 Berlin, Germany;52.515850799999996;13.335478385242993
+client2;Franz-Mehring-Platz 3, 10243 Berlin, Germany;52.513348699999995;13.438051323889946
+client3;Schloßstraße 33, 12163 Berlin, Germany;52.4577048;13.3197253
+client4;Geygerstrasse 4, 12043 Berlin, Germany;52.4792177;13.4428827
+client5;Sonnenallee 165, 12059 Berlin, Germany;52.47786285;13.44833649976539
+client6;Spandauer Damm 142, 14050 Berlin, Germany;52.5209331;13.2753018
+client7;Warschauer Platz 18, 10245 Berlin, Germany;52.505014;13.4490065
+client8;Hardenbergplatz 13, 10623 Berlin, Germany;52.5068175;13.3324387
+client9;Koppenstraße 3, 10243 Berlin, Germany;52.51078125;13.432719582866273
+client10;Schulstraße 40, 13347 Berlin, Germany;52.5510428;13.3670821

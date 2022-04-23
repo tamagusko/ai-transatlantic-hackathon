@@ -14,13 +14,13 @@ from __future__ import annotations
 
 import numpy as np
 import osmnx as ox
+import pandas as pd  # uncomment in test
 from createGraph import create_graph
 from shortestRoute import shortest_route_length
-# import pandas as pd  # uncomment in test
 ox.config(use_cache=True, log_console=True)
 
 # create the graph with the OSMnx library (location = 'Coimbra', radius = 3000, transport_mode= 'drive')
-G = create_graph('Coimbra', 3000, 'drive')
+G = create_graph('Berlin', 10000, 'drive')
 # add speed to the graph
 G = ox.add_edge_speeds(G)
 # add travel time to the graph
@@ -45,6 +45,7 @@ def get_distance_matrix(df):
             )
     return distance_matrix
 
+
 # test
-# df = pd.read_csv('./data/processed/clientCoordinates.csv', sep=';')
-# print(get_distance_matrix(df))
+df = pd.read_csv('./data/processed/clientCoordinates.csv', sep=';')
+print(get_distance_matrix(df))

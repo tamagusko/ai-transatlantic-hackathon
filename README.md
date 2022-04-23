@@ -34,14 +34,14 @@ Finally, the Luxonis OAK-D-Lite Spatial AI camera will be used to identify the d
 
 ## MVP
 
-This MVP was generated for 10 deliveries in the city of Coimbra, Portugal. The inputs were just the 10 customer addresses. And with it it was possible to calculate the best route based on travel times.
+This MVP was generated for 10 deliveries in the city of Berlin, Germany. The inputs were just the 10 customer addresses. And with it it was possible to calculate the best route based on travel times.
 
-![Concept](img/routeMVP.png)
+![Concept](img/BerlinRoute.png)
 
 To develop this MVP it was necessary:
 
 1. Enter the address of the 10 customers. They were converted to coordinates using the geocoder function of OpenStreetMaps (Nominatim). Function: [coordinates.py](https://github.com/tamagusko/ai-transatlantic-hackathon/blob/main/src/coordinates.py) and [processingData.py](https://github.com/tamagusko/ai-transatlantic-hackathon/blob/main/src/processingData.py)
-2. Using [OSMnx](https://osmnx.readthedocs.io/en/stable/) a basemap was created with information from OpenStreetMaps (OSM). Function: [createGraph.py](https://github.com/tamagusko/ai-transatlantic-hackathon/blob/main/src/createGraph.py). In this example, the graph was created with the centroid in the city of Coimbra, Portugal, with a 3 km radius and with the city's road network.
+2. Using [OSMnx](https://osmnx.readthedocs.io/en/stable/) a basemap was created with information from OpenStreetMaps (OSM). Function: [createGraph.py](https://github.com/tamagusko/ai-transatlantic-hackathon/blob/main/src/createGraph.py). In this example, the graph was created with the centroid in the city of Berlin, Germany, with a 10 km radius and with the city's road network.
 3. A distance matrix based on travel times was created. It was generated based on the length of the routes with the shortest travel time among all delivery locations in the network. Function: [createInstance.py](https://github.com/tamagusko/ai-transatlantic-hackathon/blob/main/src/createInstance.py) and [shortestRoute.py](https://github.com/tamagusko/ai-transatlantic-hackathon/blob/main/src/shortestRoute.py)
 4. With this matrix with the distances of all the routes between deliveries, a genetic algorithm was executed to find a good solution to the problem. Function: [genAlgorithmBestRoute.py](https://github.com/tamagusko/ai-transatlantic-hackathon/blob/main/src/genAlgorithmBestRoute.py)
 5. The final graph was generated over the network generated with one of the best solutions found. Function: [plotRoute.py](https://github.com/tamagusko/ai-transatlantic-hackathon/blob/main/src/plotRoute.py)
