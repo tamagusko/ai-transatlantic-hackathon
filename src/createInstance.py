@@ -1,8 +1,16 @@
 # (c) Tiago Tamagusko 2022
-# BUG return NEED TO FIX
-from __future__ import annotations
+"""
+Create an instance for the distances between clients.
+Returns an n x n matrix with n = number of clients.
 
-import time
+Usage:
+    get_distance_matrix(df)
+Example:
+    # Creates a matrix for the distances between clients.
+    df = pd.read_csv('./data/processed/clientCoordinates.csv', sep=';')
+    get_distance_matrix(df)
+"""
+from __future__ import annotations
 
 import numpy as np
 import osmnx as ox
@@ -21,29 +29,22 @@ G = ox.add_edge_travel_times(G)
 
 def get_distance_matrix(df):
     """
-    Returns the distance matrix between each client.
+    Returns the distance matrix between each client using the latitude and longitude.
     Args:
-        dataset: The dataset must have two columns, one for the clients and one for the address coordinates.
+        df: The dataset must have two columns latitude and longitude.
     """
     latitudes = df['latitude'].to_list()
     longitudes = df['longitude'].to_list()
-    distance_matrix = np.matrix(np.zeros((len(df), len(df))))
+    distance_matrix = np.matrix(np.zeros((len(latitudes), len(longitudes))))
     for i in range(len(df)):
         for j in range(len(df)):
-            time.sleep(1)
-            distance_matrix[i, j](
-                shortest_route_length(
-                    G, longitudes[i], latitudes[i], longitudes[j], latitudes[j],
-                ),
+            distance_matrix[i, j] = shortest_route_length(
+                G, latitudes[i], longitudes[i], latitudes[j], longitudes[j],
             )
+    # set all the zeros to a big number
+    distance_matrix[distance_matrix == 0] = 10000
     return distance_matrix
 
 
 df = pd.read_csv('./data/processed/clientCoordinates.csv', sep=';')
-# print(get_distance_matrix(df))
-distance_matrix = np.matrix(np.zeros((len(df), len(df))))
-distance_matrix[0, 1] = shortest_route_length(
-    G, 40.2019077, -8.4132559, 40.2079321, 8.4241537,
-)
-# print(shortest_route_length(G, 40.2019077, -8.4132559, 40.2079321, 8.4241537))
-print(df.head())
+print(get_distance_matrix(df))
