@@ -36,18 +36,8 @@ def coordinates(address: str):
 
 
 def latitude(address: str):
-    locator = Nominatim(user_agent='myGeocode', timeout=10)
-    try:
-        location = locator.geocode(address)
-        return location.latitude
-    except AttributeError:
-        return None  # If the address is not found, return None
+    return coordinates(address)[0]
 
 
 def longitude(address: str):
-    locator = Nominatim(user_agent='myGeocode', timeout=10)
-    try:
-        location = locator.geocode(address)
-        return location.longitude
-    except AttributeError:
-        return None  # If the address is not found, return None
+    return coordinates(address)[1]
