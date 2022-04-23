@@ -1,14 +1,12 @@
-# Sustainable Supply Chain DeepHack
+# A Multi-Objective Approach for Avoiding Multiple Delivery Attempts
 
 ## Transatlantic AI Hackathon - ULTRAHACK
 
-[Ideas](https://docs.google.com/document/d/1BjOzDVyPdYw4VCrMpDJSqaygSjmlmXd4kGMiTXUDkdo/edit) [Pitch](https://www.canva.com/design/DAE7J_kW5K0/cvCfKXv1FJnDe2ysbXzTGA/edit?utm_content=DAE7J_kW5K0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-
-## Project Name
+## Sustainable Supply Chain DeepHack
 
 Our project uses artificial intelligence, smart lockers, and optimization algorithms to solve the problem of last-mile product deliveries.
 
-## Team:
+## Team 01:
 
 [Armando Dauer](https://github.com/ArmandoDauer) (Back-end developer, Transportation specialist) \
 [Jovial Tchatchum](https://github.com/aj52izov) (Back-end developer) \
@@ -27,9 +25,9 @@ Optimized routes are no longer enough to solve delivery problems. Our proposal i
 Therefore, the user can receive it at home or in a smart locker. Slots are available outside of peak traffic hours for home delivery, thus avoiding deliveries at busy times. Still, one hour before the scheduled delivery, you receive an SMS to confirm the delivery in the option to receive at home. Also, 15 minutes before delivery, the user gets a call that will use an NLP algorithm to inform that delivery is approaching, request confirmation, and inform the documents necessary to receive the product. If the user cannot receive the product, that item is directed to the nearest closet.
 Finally, the Luxonis OAK-D-Lite Spatial AI camera will be used to identify the dimensions of deliveries and direct them to fit the available cabinets with these measurements.
 
-### AI Features
+### Features
 
-- NLP confirmation algorithm;
+- Intelligent delivery confirmation and redirection system;
 - Computer vision box measurements;
 - Smart route management with real-time update.
 
