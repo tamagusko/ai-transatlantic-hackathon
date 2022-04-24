@@ -48,6 +48,16 @@ To develop this MVP it was necessary:
 
 This route can be built with any combination of addresses that can be found in OSM. And the routes, travel times, and the availability of the roads depend only on the quality of the information present in the OSM.
 
+![Dashboard](img/demo.gif)
+
+This is a demo of our dashboard.
+
+It will show the details and status of orders. It will also provide a forecast of delivery and transit routes.
+
+Our idea is that logistics operators will use this panel.
+
+Interaction with customers will be more straightforward and more organic. He will receive a link to track the order's progress by email and SMS. On the day of delivery, the customer will have access to the tracker to know where the order is in real-time.
+
 ---
 
 Codes and data are protected. Please see [LICENSE](LICENSE) for details.
