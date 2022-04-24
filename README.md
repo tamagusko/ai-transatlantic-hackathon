@@ -1,4 +1,4 @@
-# A Multi-Objective Approach for Avoiding Multiple Delivery Attempts
+# PacketLocker: a Multi-Objective Approach for Avoiding Multiple Delivery Attempts
 
 ## Transatlantic AI Hackathon - ULTRAHACK
 
@@ -22,8 +22,8 @@ Optimized routes are no longer enough to solve delivery problems. Our proposal i
 
 ![Concept](img/concept.png)
 
-Therefore, the user can receive it at home or in a smart locker. Slots are available outside of peak traffic hours for home delivery, thus avoiding deliveries at busy times. Still, one hour before the scheduled delivery, you receive an SMS to confirm the delivery in the option to receive at home. Also, 15 minutes before delivery, the user gets a call that will use an NLP algorithm to inform that delivery is approaching, request confirmation, and inform the documents necessary to receive the product. If the user cannot receive the product, that item is directed to the nearest closet.
-Finally, the Luxonis OAK-D-Lite Spatial AI camera will be used to identify the dimensions of deliveries and direct them to fit the available cabinets with these measurements.
+Therefore, the user can receive it at home or in a smart locker. Then, one hour before the scheduled delivery, the client receives an SMS to confirm delivery in the option to receive at home. In addition, 15 minutes before, the client receives a call that will use an NLP algorithm to inform that delivery is approaching, request confirmation, and inform the documents necessary to receive the delivery. If the user cannot receive the product, this item has the option of being directed to the closest locker chosen by the customer.
+Finally, the Luxonis OAK-D-Lite Spatial AI camera will be used to identify the dimensions of the deliveries and direct them to fit the available lockers with these measurements.
 
 ### Features
 
