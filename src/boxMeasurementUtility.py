@@ -1,3 +1,8 @@
+"""
+(c) Jovial Silatsa Tchatchum
+        mbonnoujovial@gmail.com
+"""
+
 import numpy as np
 import json
 from imutils import perspective
@@ -7,10 +12,13 @@ import cv2
 import matplotlib.pyplot as plt
 import pdb
 
+
 def _midpoint(ptA, ptB):
     return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
 
-def get_bbox_width_height_in_mm(image_width_height_pxl: tuple , distance_camera_object: float = 0, focal_length: float = 3.37):
+
+def get_bbox_width_height_in_mm(image_width_height_pxl: tuple, distance_camera_object: float = 0,
+                                focal_length: float = 3.37):
     """
         compute the bounding box width and height that contains the object present in image.
         Assumption: the image only have one object
@@ -22,7 +30,7 @@ def get_bbox_width_height_in_mm(image_width_height_pxl: tuple , distance_camera_
         """
     assert distance_camera_object != 0 and focal_length != 0
     x = 6.100 / 4224
-    (width , height) = image_width_height_pxl
+    (width, height) = image_width_height_pxl
     height = (distance_camera_object * height) / (focal_length)
     width = (distance_camera_object * width) / (focal_length)
     return width, height
@@ -38,14 +46,14 @@ def get_bbox_width_height_pxl(image_mat):
         """
 
     # load the image, convert it to grayscale, and blur it slightly
-    gray = image_mat# cv2.cvtColor(image_mat, cv2.COLOR_BGR2GRAY)
+    gray = image_mat  # cv2.cvtColor(image_mat, cv2.COLOR_BGR2GRAY)
     gray = cv2.GaussianBlur(gray, (7, 7), 0)
     edged = cv2.Canny(gray, 50, 100)
     edged = cv2.dilate(edged, None, iterations=3)
     edged = cv2.erode(edged, None, iterations=2)
 
-    #cv2.imshow("Image", edged)
-    #cv2.waitKey(0)
+    # cv2.imshow("Image", edged)
+    # cv2.waitKey(0)
 
     # find contours in the edge map
     cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
@@ -73,21 +81,19 @@ def get_bbox_width_height_pxl(image_mat):
         box = perspective.order_points(box)
         cv2.drawContours(orig, [box.astype("int")], -1, (0, 255, 0), 2)
 
-
-
         # unpack the ordered bounding box, then compute the midpoint
         # between the top-left and top-right coordinates, followed by
         # the midpoint between bottom-left and bottom-right coordinates
         (tl, tr, br, bl) = box
-        #print(centroid)
-        #cv2.circle(orig, (int(centroid[0]), int(centroid[1])), 5, (255, 0, 0), -1)
-        #cv2.imshow("test", orig)
-        #cv2.waitKey()
-        #pdb.set_trace()
+        # print(centroid)
+        # cv2.circle(orig, (int(centroid[0]), int(centroid[1])), 5, (255, 0, 0), -1)
+        # cv2.imshow("test", orig)
+        # cv2.waitKey()
+        # pdb.set_trace()
 
-        #print(tl, tr, br, bl)
-        #print(xmin, xmax, ymin, ymax)
-        #pdb.set_trace()
+        # print(tl, tr, br, bl)
+        # print(xmin, xmax, ymin, ymax)
+        # pdb.set_trace()
         width1 = np.linalg.norm(tl - tr)
         width2 = np.linalg.norm(bl - br)
         height1 = np.linalg.norm(tl - bl)
@@ -101,14 +107,14 @@ def get_bbox_width_height_pxl(image_mat):
         height = height1 if height1 >= height2 else height2  # np.linalg.norm(left_center - right_center)
         return width, height, orig, (tltrX, tltrY, trbrX, trbrY), (tl, br)
 
-#testing
-#img_mat_view1 = cv2.imread("../data/images/image1_view1_.jpg")
-#img_mat_view2 = cv2.imread("../data/images/image1_view2.jpg")
+# testing
+# img_mat_view1 = cv2.imread("../data/images/image1_view1_.jpg")
+# img_mat_view2 = cv2.imread("../data/images/image1_view2.jpg")
 
-#pixelsPerCmMetric = np.load("../data/estimations/pixelsPerCMMetric_estimate.npy")
+# pixelsPerCmMetric = np.load("../data/estimations/pixelsPerCMMetric_estimate.npy")
 
-#print(pixelsPerCmMetric)
+# print(pixelsPerCmMetric)
 
-#result = get_bbox_width_height_pxl(img_mat_view1)
-#print(result)
-#_get_bbox_width_height(img_mat_view1, training_phase=False, pixelsPerCmMetric =pixelsPerCmMetric)
+# result = get_bbox_width_height_pxl(img_mat_view1)
+# print(result)
+# _get_bbox_width_height(img_mat_view1, training_phase=False, pixelsPerCmMetric =pixelsPerCmMetric)
