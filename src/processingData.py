@@ -7,6 +7,7 @@ Usage:
 
 Example:
     # Creates a dataset with the coordinates of the clients and save on default folder
+    df = pd.read_csv('./data/clientAddress.csv', sep=';')
     saveData(add_client_coordinates_to_dataset(df))
 """
 from __future__ import annotations
@@ -43,3 +44,7 @@ def add_client_coordinates_to_dataset(df):
     df['latitude'] = df['address'].apply(latitude).astype(str)
     df['longitude'] = df['address'].apply(longitude).astype(str)
     return df
+
+# generate the coordinates to Berlin lockers and save it
+# df = pd.read_csv('./data/lockersBerlin.csv', sep=';')
+# saveData(add_client_coordinates_to_dataset(df), filename='lockersBerlinCoordinates.csv')

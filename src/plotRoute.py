@@ -58,7 +58,7 @@ def plot_graph_route(G, route, weight):
         G: Graph (networkx)
         route: list of routes to plot. Use create_route(G, best_route) to generate the route.
     """
-    return ox.plot_graph_routes(G, route, route_linewidth=6, node_size=0, bgcolor='k')
+    return ox.plot_graph_routes(G, route, route_colors='b', route_linewidth=6, node_size=0, bgcolor='k')
 
 
 # test
@@ -69,5 +69,5 @@ G = ox.add_edge_speeds(G)
 G = ox.add_edge_travel_times(G)
 
 # best route from genetic algorithm (genAlgorithmBestRoute): result =  2490 [1, 8, 6, 4, 3, 0, 7, 2, 5, 9]
-best_route = [1, 8, 6, 4, 3, 0, 7, 2, 5, 9]
+best_route = [3, 4, 2, 0, 1]
 plot_graph_route(G, create_route(G, best_route), 'travel_time')

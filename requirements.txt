@@ -1,7 +1,10 @@
+depthai==2.15.3.0
 geopy==2.2.0
 imutils==0.5.4
+keyboard==0.13.5
 networkx==2.8
 numpy==1.22.3
+opencv-python==4.5.5.64
 osmnx==1.1.2
 pandas==1.4.2
 scikit-learn==1.0.2
