@@ -4,7 +4,7 @@
 
 ## Sustainable Supply Chain DeepHack
 
-Our project uses artificial intelligence, smart lockers, and optimization algorithms to solve the problem of last-mile product deliveries.
+Our idea centers on using smart lockers as an alternative to multiple delivery attempts. We use the two-step confirmation and redirection system. If the customer cannot receive the product for some reason, he has the alternative of receiving it in a locker of his choice.
 
 ## Team 01:
 
